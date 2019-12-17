@@ -6,7 +6,7 @@ describe('get captain', () => {
     test('it should return undefined if the captain does not exist', () => {
         expect(getCaptain('Captain America')).toBeUndefined()
     });
-    describe('when the captain exists', () => {
+    describe('when the captain exists in the exact form provided', () => {
         let result;
         beforeAll(() => {
             result = getCaptain('Patsy Stone')
@@ -30,4 +30,10 @@ describe('get captain', () => {
             ])
         })
     });
+    test('it should fetch the captain in a case insensitive way', () => {
+        expect(getCaptain('patsy stone')).not.toBeUndefined();
+        expect(getCaptain('pAtsy stone')).not.toBeUndefined();
+        expect(getCaptain('patsy stOne')).not.toBeUndefined();
+        expect(getCaptain('patsY sTone')).not.toBeUndefined();
+    })
 });
