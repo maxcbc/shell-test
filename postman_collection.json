@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "72a461e7-c416-408a-b768-e95f4991526e",
+		"name": "Shell Tech Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET: /history/:captainName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOSTNAME}}/history/:captainName",
+					"host": [
+						"{{HOSTNAME}}"
+					],
+					"path": [
+						"history",
+						":captainName"
+					],
+					"variable": [
+						{
+							"key": "captainName",
+							"value": "patsy+stone"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST: /arrival",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"captain\": \"Patsy+Stone\",\n    \"vessel\": \"El Tauro\",\n    \"datetime\": \"5th of Feb 2056\",\n    \"port\": \"Singapore\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOSTNAME}}/arrival",
+					"host": [
+						"{{HOSTNAME}}"
+					],
+					"path": [
+						"arrival"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "example-api-key",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "x-api-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e17ecf75-835f-42b1-a8a8-fa4b3c67024a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0ff934e2-6a2b-44d6-94f2-ba9e889ae190",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "8a325811-d125-47c9-8031-f63b09d0c0ee",
+			"key": "HOSTNAME",
+			"value": "https://shell-test--production.herokuapp.com",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
