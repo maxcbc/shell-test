@@ -24,3 +24,17 @@ a captain's journey history in JSON format:
     ]
 }
 ```
+
+### POST: /arrival
+#### REQUEST BODY
+```$json
+{
+	"captain": "Patsy+Stone",
+    "vessel": "El Tauro",
+    "datetime": "5th of Feb 2056",
+    "port": "Singapore"
+}
+```
+
+#### RESPONSE 
+201 - if successful
