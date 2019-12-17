@@ -13,11 +13,12 @@ const JOURNEYS = [
 ];
 
 exports.getCaptain = (name) => {
-    if (CAPTAINS.includes(name)) {
+    if (!name) return;
+    if (CAPTAINS.find(captain => captain.toLowerCase() === name.toLowerCase())) {
         return {
             captainName: name,
             trips: JOURNEYS
-                .filter(trip => trip.captain === name)
+                .filter(trip => trip.captain.toLowerCase() === name.toLowerCase())
                 .map(({vessel, from, to, fromDate, toDate}) => ({vessel, from, to, fromDate, toDate}))
         }
     }
