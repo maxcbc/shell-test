@@ -2,9 +2,12 @@
 
 ## Endpoints
 
+All endpoints require an apiKey supplied via the `x-api-key` header.
+
 ### GET: /history/:captainName
 #### REQUEST
-`captainName` - a captains name in the format `<FirstName>+<Surname>` (case insensitive)
+`:captainName` - a captains name in the format `<FirstName>+<Surname>` (case insensitive)
+
 #### RESPONSE 
 a captain's journey history in JSON format:
 ```$json
